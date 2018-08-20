@@ -14,6 +14,7 @@ $ mvn clean package
 Right after that just run each application adding the specific profile to the command line, e.g:
 
 $ java -jar target/*.jar --spring.profiles.active=zone1
+
 Remember that you need to run each application twice, once each profile: zone1 and zone2.
 ------------------------------------------------------------------------------------------------------------------------------------------
 Validation
@@ -22,6 +23,7 @@ To validate if the requests are respecting each zone we need to make a request t
 $ curl http://localhost:8765/zone-service/zone
 
 {"zone"="zone1"}
+
 $ curl http://localhost:8766/zone-service/zone
 
 {"zone"="zone2"}
@@ -32,7 +34,9 @@ To validate the failover between zones you just need to stop one of the instance
 
 Stop zone-service on zone2.
 Make a request to zone-service through the zuul on zone2.
+
 $ curl http://localhost:8766/zone-service/zone
+
 The expected result now will be a JSON containing {"zone"="zone1"}.
 Once the zone-service for zone1 is up, running and registered in Eureka Server the same curl has to respond {"zone"="zone2"} again.
 
