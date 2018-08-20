@@ -27,6 +27,8 @@ $ curl http://localhost:8765/zone-service/zone
 $ curl http://localhost:8766/zone-service/zone
 
 {"zone"="zone2"}
+
+
 The difference between each zone here is the server.port.
 ------------------------------------------------------------------------------------------------------------------------------------------
 Zone Failover Validation
