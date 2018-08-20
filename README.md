@@ -1,12 +1,12 @@
 Spring Cloud Eureka Zone Affinity
----
+------------------------------------------------------------------------------------------------------------------------------------------
 
 
 Zone Affinity
 It doesn’t matter which kind of architectural style the application is using, 
 it’s a common use case to have the same application deployed in different regions/data centers and use some technique to keep the requests within the same zone.
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
 Build & Run
 It’s time to build the applications; if you are building the application using maven (like I did), just build them executing:
 
@@ -15,7 +15,7 @@ Right after that just run each application adding the specific profile to the co
 
 $ java -jar target/*.jar --spring.profiles.active=zone1
 Remember that you need to run each application twice, once each profile: zone1 and zone2.
------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------
 Validation
 To validate if the requests are respecting each zone we need to make a request to the simple-service through each gateway.
 
@@ -33,5 +33,12 @@ Make a request to zone-service through the zuul on zone2.
 $ curl http://localhost:8766/zone-service/zone
 The expected result now will be a JSON containing {"zone"="zone1"}.
 Once the zone-service for zone1 is up, running and registered in Eureka Server the same curl has to respond {"zone"="zone2"} again.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Reference:
+https://cloud.spring.io/spring-cloud-netflix/multi/multi__service_discovery_eureka_clients.html
 
 
