@@ -20,8 +20,10 @@ Validation
 To validate if the requests are respecting each zone we need to make a request to the simple-service through each gateway.
 
 $ curl http://localhost:8765/zone-service/zone
+
 {"zone"="zone1"}
 $ curl http://localhost:8766/zone-service/zone
+
 {"zone"="zone2"}
 The difference between each zone here is the server.port.
 ------------------------------------------------------------------------------------------------------------------------------------------
