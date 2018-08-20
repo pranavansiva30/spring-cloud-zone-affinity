@@ -18,7 +18,7 @@ $ java -jar target/*.jar --spring.profiles.active=zone1
 Remember that you need to run each application twice, once each profile: zone1 and zone2.
 ------------------------------------------------------------------------------------------------------------------------------------------
 Validation
-To validate if the requests are respecting each zone we need to make a request to the simple-service through each gateway.
+To validate if the requests are respecting each zone we need to make a request to the simple-service through each zuul server.
 
 $ curl http://localhost:8765/zone-service/zone
 
