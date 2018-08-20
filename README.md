@@ -8,16 +8,23 @@ What You Will Build
 You will build three applications:
 
 zuul server - Spring Cloud Netflix Zuul
+
 eureka server - Spring Cloud Netflix Eureka
+
 micro Service - Spring Cloud
+
 All those are necessary to make sure that our zone affinity setup is correct. Each of them will be deployed twice, one per zone.
 
 Pre-Req
+
 JDK 1.8
+
 Text editor or your favorite IDE
+
 Maven 3.0+
 
 Zone Affinity
+
 It doesn’t matter which kind of architectural style the application is using, it’s a common use case to have the same application deployed in different regions/data centers and use some technique to keep the requests within the same zone.
 
 In microservices architecture, there’s also a need to achieve the same thing but the technique needs to be applied using the Service Registry Design Pattern.
